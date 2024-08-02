@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://superspeeder.dev/projects/braindedtech/json_schemas/material.schema.json",
+  "title": "Material",
+  "description": "The definition of a material type. Defines what kind of material it is, what parts can be made from it, etc.",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The raw name of the material (not localized. Localization key will be bdtech.material.name.<name>)",
+      "type": "string",
+      "pattern": "^[a-z0-9_]+$"
+    },
+    "parts": {
+      "description": "A list of part types which this material supports. The loader will throw an error if any part is missing required parameters (only parts without required parameters may be referenced by registry name alone).",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "type": "string",
+            "description": "The registry name of the part type."
+          }
+        ]
+      }
+    },
+    "tint": {
+      "description": "The tint to use for textures when generating the related items",
+      "type": "string",
+      "pattern": "^#([0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+    }
+  },
+  "required": [ "name", "allowed-parts", "tint" ]
+}
