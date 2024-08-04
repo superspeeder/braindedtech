@@ -1,6 +1,6 @@
 when I come back:
 
-set up material.schema.json allowed-parts to have part settings (i.e. allow ingots to be bars without needing a new, fancy part, etc.) based on the part specification.
+set up material.schema.json allowed-parts to have partConfiguration settings (i.e. allow ingots to be bars without needing a new, fancy partConfiguration, etc.) based on the partConfiguration specification.
 
 
 # Where data is defined
